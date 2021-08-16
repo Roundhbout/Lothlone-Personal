@@ -1,0 +1,11 @@
+Hi Team,
+
+Thank you for implementing our specification for the Traveller Server module. In general, we were satisfied with your specification, though we would have liked to see more protection against adding duplicate items. You did check uniqueness of character name, which is good, but not against adding towns with duplicate names or duplicate edges. In hindsight with the former case, we did implicitly mention this in our specification that the function for adding new towns to the network should take in a "string argument for the name of the new Town to add, which must be unique". In hindsight, we realize this could have been stated more clearly. In the case of adding duplicate edges, it's something we would have liked to see, but we did not say anything in our specification disallowing that, so that's our mistake.
+
+One other small critique we had was that the get_town function returns None if the town does not exist. While this is a reasonable behavior, we believe this should be specified in the documentation so that any user would know its behavior without needing to read the actual implementation.
+
+Aside from those minor issues, we were very pleased with the implementation and were able to successfully integrate it with our client module in a reasonable amount of time, mostly spent modifying our function names to match yours, enabling our client to read in multiple commands at once, and ensuring we add towns to the network before connecting them. In hindsight, we should have specified to only have one function with inputs indicating all towns and how they are connected, or alternatively specifying that adding new roads will also automatically add previously unknown towns to the network. It was a bit cumbersome for us to receive a command to connect two towns and have to check to see if those two towns exist and add them if necessary before adding the road. That is the major thing we would have changed for our specification, in addition to just organizing it a little better to clearly define the interface, possibly specifying function names and arguments to ensure compatibility.
+
+Thanks,
+
+Team Lothlone
